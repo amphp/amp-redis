@@ -21,8 +21,10 @@ final class RedisList
 
     /**
      * @link https://redis.io/commands/lindex
+     *
+     * TODO: Change type declaration to int only in next major.
      */
-    public function get(string $index): string
+    public function get(string|int $index): ?string
     {
         return $this->client->execute('lindex', $this->key, $index);
     }
