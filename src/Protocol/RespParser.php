@@ -5,7 +5,6 @@ namespace Amp\Redis\Protocol;
 use Amp\ForbidCloning;
 use Amp\ForbidSerialization;
 use Amp\Parser\Parser;
-use Generator as ParserGeneratorType;
 
 /**
  * @psalm-type ParserGeneratorType = \Generator<int, int|string, string, RedisResponse>
