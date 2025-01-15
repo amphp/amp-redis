@@ -95,9 +95,7 @@ final class RedisConfig
     private function applyUri(string $uri): void
     {
         try {
-            // Upgrade to new API before supporting league/uri 8.x
-            /** @psalm-suppress DeprecatedMethod */
-            $uri = Uri::createFromString($uri);
+            $uri = Uri::new($uri);
         } catch (\Exception) {
             throw new RedisException('Invalid redis configuration URI: ' . $uri);
         }
